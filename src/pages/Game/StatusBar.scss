@@ -1,0 +1,48 @@
+.status-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 6rem;
+
+  .tries {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      &.label {
+        color: #333;
+      }
+      
+      &.number {
+        margin-left: .5rem;
+
+        color: #000;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .best {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      &.label {
+        color: #333;
+      }
+      
+      &.number {
+        margin-top: .75rem;
+
+        color: #000;
+        font-size: 2rem;
+      }
+    }
+  }
+}
