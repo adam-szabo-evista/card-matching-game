@@ -8,7 +8,8 @@ import {
   createNewGame,
   flipCard,
   getFlippedCards,
-  processFlippedCards
+  processFlippedCards,
+  unflipCards
 } from '../../util/helpers';
 
 const Game = () => {
@@ -30,10 +31,17 @@ const Game = () => {
     setCards(newCards);
   }
 
+  const restartGame = () => {
+    let newCards = unflipCards(cards);
+
+    setCards(newCards);
+    setTries(0);
+  }
+
   return (
     <Layout>
       <div className='page-game'>
-        <StatusBar tries={tries} best={best}/>
+        <StatusBar tries={tries} best={best} restartGame={restartGame}/>
         <Board cards={cards} flip={flip} />
       </div>
     </Layout>

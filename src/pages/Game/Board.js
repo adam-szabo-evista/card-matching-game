@@ -12,7 +12,7 @@ const Board = ({ cards = [], flip }) => {
           <Card
             key={idx}
             cardNr={card.cardNr}
-            position={idx}
+            position={card.position}
             state={card.state}
             flip={flip}
           />

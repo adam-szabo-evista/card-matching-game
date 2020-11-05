@@ -72,16 +72,11 @@ export const unflipCards = (cards) => {
 };
 
 export const flipCard = (cards, position) => {
-  return cards.map((card, index) => {
-    if (index === position) {
-      return {
-        ...card,
-        state: CARD_STATES.FLIPPED
-      }
-    };
+  const newCards = [].concat(cards);
 
-    return card;
-  });
+  newCards[position].state = CARD_STATES.FLIPPED;
+
+  return newCards;
 };
 
 export const getFlippedCards = (cards) => {

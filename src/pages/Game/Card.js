@@ -22,13 +22,9 @@ const getCardImage = (cardNr) => {
 }
 
 const Card = ({ cardNr, state, position, flip}) => {
-  const flipCard = () => {
-    flip(position);
-  }
-
   const src = getCardImage(cardNr);
 
-  return <div className={`card-sheet ${state}`} onClick={flipCard}>
+  return <div className={`card-sheet ${state}`} onClick={() => flip(position)}>
     <img className='card' src={src} />
   </div>
 }
