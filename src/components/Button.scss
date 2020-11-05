@@ -1,0 +1,22 @@
+.app-button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+
+  padding: .5rem 2rem;
+  border-radius: .125rem;
+
+  text-transform: uppercase;
+
+  background-color: #f00;
+
+  span {
+    font-weight: 700;
+
+    color: #fff;
+  }
+}
