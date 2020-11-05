@@ -1,0 +1,14 @@
+.layout {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: stretch;
+  align-items: stretch;
+
+  min-height: 100%;
+
+  .layout-content {
+    flex-grow: 999;
+
+    background-color: #eee;
+  }
+}
