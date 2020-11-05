@@ -7,16 +7,32 @@
   height: 100%;
   width: 100%;
 
-  padding: .5rem 2rem;
+  padding: .75rem 2rem;
   border-radius: .125rem;
+
+  font-size: 1.25rem;
 
   text-transform: uppercase;
 
-  background-color: #f00;
+  &.clickable {
+    cursor: pointer;
+  }
 
-  span {
-    font-weight: 700;
+  &.secondary {
+    background-color: transparent;
+    border: 1px solid #000;
 
+    span {
+      font-weight: 700;
+    }
+  }
+
+  &.primary {
+    background-color: #f00;
     color: #fff;
+
+    span {
+      font-weight: 500;
+    }
   }
 }
