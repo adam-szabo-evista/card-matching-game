@@ -72,7 +72,11 @@ export const unflipCards = (cards) => {
 };
 
 export const flipCard = (cards, position) => {
-  const newCards = [].concat(cards);
+  const newCards = [];
+
+  for(let card of cards) {
+    newCards.push({...card});
+  }
 
   newCards[position].state = CARD_STATES.FLIPPED;
 
@@ -85,10 +89,10 @@ export const getFlippedCards = (cards) => {
   for (let idx = 0; idx < cards.length; idx++) {
     const currentCard = cards[idx];
 
-    if (currentCard.state = CARD_STATES.FLIPPED) {
+    if (currentCard.state === CARD_STATES.FLIPPED) {
       flipped.push({
         position: idx,
-        card: currentCard
+        card: {...currentCard}
       })
     }
   }
@@ -97,10 +101,14 @@ export const getFlippedCards = (cards) => {
 }
 
 export const processFlippedCards = (cards, flipped) => {
-  const newCards = [].concat(cards);
+  const newCards = [];
+
+  for(let card of cards) {
+    newCards.push({...card});
+  }
 
   let nextState;
-  if (flipped[0].card.state === flipped[1].card.state) {
+  if (flipped[0].card.cardNr === flipped[1].card.cardNr) {
     nextState = CARD_STATES.MATCHED;
   } else {
     nextState = CARD_STATES.FACEDOWN;
@@ -109,8 +117,8 @@ export const processFlippedCards = (cards, flipped) => {
   flipped[0].card.state = nextState;
   flipped[1].card.state = nextState;
 
-  newCards[flipped[0].position] = flipped[0].card;
-  newCards[flipped[1].position] = flipped[1].card;
+  newCards[flipped[0].position] = {...flipped[0].card};
+  newCards[flipped[1].position] = {...flipped[1].card};
 
   return newCards;
 }
