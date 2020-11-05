@@ -1,0 +1,25 @@
+.card-sheet {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: .8rem;
+
+  background-color: #fff;
+
+  img {
+    width: 70%;
+    height: 70%;
+  }
+
+  &.matched {
+    background-color: transparent;
+  }
+
+  &.facedown {
+    img {
+      visibility: hidden;
+    }
+  }
+}
