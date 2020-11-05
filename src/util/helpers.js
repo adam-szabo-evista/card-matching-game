@@ -103,7 +103,7 @@ export const getFlippedCards = (cards) => {
 export const processFlippedCards = (cards, flipped) => {
   const newCards = [];
 
-  for(let card of cards) {
+  for (let card of cards) {
     newCards.push({...card});
   }
 
@@ -121,4 +121,14 @@ export const processFlippedCards = (cards, flipped) => {
   newCards[flipped[1].position] = {...flipped[1].card};
 
   return newCards;
+}
+
+export const isGameFinished = (cards) => {
+  for (let card of cards) {
+    if (card.state !== CARD_STATES.MATCHED) {
+      return false;
+    }
+  }
+
+  return true;
 }
