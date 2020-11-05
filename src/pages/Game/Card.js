@@ -10,6 +10,7 @@ import sass from '../../assets/cards/sass.png';
 import splendex from '../../assets/cards/splendex.png';
 import ts from '../../assets/cards/ts.png';
 import webpack from '../../assets/cards/webpack.png';
+import { CARD_STATES } from '../../util/helpers';
 
 import './Card.scss';
 
@@ -24,7 +25,7 @@ const getCardImage = (cardNr) => {
 const Card = ({ cardNr, state, position, flip}) => {
   const src = getCardImage(cardNr);
 
-  return <div className={`card-sheet ${state}`} onClick={() => flip(position)}>
+  return <div className={`card-sheet ${state}`} onClick={state !== CARD_STATES.MATCHED ? () => flip(position) : null}>
     <img className='card' src={src} />
   </div>
 }

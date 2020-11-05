@@ -24,4 +24,8 @@
       visibility: hidden;
     }
   }
+
+  &:not(.matched) {
+    cursor: pointer;
+  }
 }
