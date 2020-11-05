@@ -4,9 +4,9 @@ import './Layout.scss';
 
 import Header from './Header/Header';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, newGame }) => {
   return <div className='layout'>
-    <Header />
+    <Header newGame={newGame} />
     <div className='layout-content'>
       {children}
     </div>

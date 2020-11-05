@@ -38,8 +38,12 @@ const Game = () => {
     setTries(0);
   }
 
+  const newGame = (deckSize = 20) => {
+    setCards(createNewGame(20));
+  }
+
   return (
-    <Layout>
+    <Layout newGame={newGame}>
       <div className='page-game'>
         <StatusBar tries={tries} best={best} restartGame={restartGame}/>
         <Board cards={cards} flip={flip} />

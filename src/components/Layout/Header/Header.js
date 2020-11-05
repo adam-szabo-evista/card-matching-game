@@ -6,7 +6,7 @@ import './Header.scss';
 
 import Button from '../../Button';
 
-const Header = ({ }) => {
+const Header = ({ newGame }) => {
   const location = useLocation();
 
   const renderControls = location.pathname === '/game';
@@ -15,7 +15,7 @@ const Header = ({ }) => {
     <img className='logo' src={splendexLogo} alt='Splendex logo' />
     {renderControls && (
       <div className='controls'>
-        <Button>{'Start new game'}</Button>
+        <Button onClick={newGame}>{'Start new game'}</Button>
       </div>
     )}
   </header>;
